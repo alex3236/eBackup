@@ -6,14 +6,14 @@ crontask: '0 0 4 * * *' # 默认的这个表达式表示每天凌晨4:00备份
 # | | | | | |
 # | | | | | +---- 星期几          (1-7)
 # | | | | +------ 月份            (1-12)
-# | | | +-------- 每月的第几天    (1-31)
+# | | | +-------- 每月的第几天     (1-31)
 # | | +---------- 小时            (0-23)
 # | +------------ 分钟            (0-59)
 # +-------------- 秒钟            (0-59)
 
 # 如果不懂可以使用Cron生成器：https://github.com/eagle3236/Cron-GUI/blob/master/README.md
 
-backup-format: 'eBackup {DATE}' #备份文件名字
+backup-format: 'eBackup {DATE}' #备份文件名字。{DATE}表示日期
 
 # 存储备份的文件夹
 backup-path: 'plugins/eBackup/backups'
@@ -21,6 +21,9 @@ backup-path: 'plugins/eBackup/backups'
 # 备份数量阈值，检测到备份文件多于这个数量时会删除旧备份。 (设置为0可禁用此功能)
 # 如果开启FTP/SFTP备份则此项无效。
 max-backups: 20
+
+# 在上传后删除本地备份文件
+delete-after-upload: false
 
 # FTP/SFTP设定
 # 如果开启此功能，上面的 max-backups 将失效。
